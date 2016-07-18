@@ -8,9 +8,8 @@ app.get('/', function(req, res) {
 
 io.on('connection', function(socket){
   socket.broadcast.emit('notifications', 'new user joined the chat');
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-    console.log('message: ' + msg);
+  socket.on('chat message', function(data){
+    io.emit('chat message', data.nickname + '  said: ' + data.message);
   });
 });
 

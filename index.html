@@ -17,6 +17,7 @@
     <ul id="messages"></ul>
     <p id='notifications'i></p>
     <form action="">
+      <input id="nickname" autocomplete="off" value='nickname' />
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
 
@@ -25,14 +26,17 @@
     <script>
       var socket = io();
       $('form').submit(function(){
-         socket.emit('chat message', $('#m').val());
+         socket.emit('chat message', { 
+           message : $('#m').val(),
+           nickname : $('#nickname').val()
+          } );
          $('#m').val('');
          return false;
        });
 
       socket.on('chat message', function(msg) {
-        $('#messages').append($('<li>').text(msg));
         $('#notifications').text('');
+        $('#messages').append($('<li>').text(msg));
       });
 
       socket.on('notifications', function(msg) {
