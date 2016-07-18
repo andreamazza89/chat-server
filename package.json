@@ -1,0 +1,27 @@
+{
+  "name": "chat-server",
+  "version": "0.0.1",
+  "description": "my first socket app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreamazza89/chat-server.git"
+  },
+  "keywords": [
+    "socket.io",
+    "websocket"
+  ],
+  "author": "Andrea Mazzarella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreamazza89/chat-server/issues"
+  },
+  "homepage": "https://github.com/andreamazza89/chat-server#readme",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.4.8"
+  }
+}
