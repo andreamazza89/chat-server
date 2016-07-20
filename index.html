@@ -25,6 +25,13 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       var socket = io();
+
+      $('form').keypress(function(){
+         socket.emit('typing', { 
+           nickname : $('#nickname').val()
+          } );
+       });
+
       $('form').submit(function(){
          socket.emit('chat message', { 
            message : $('#m').val(),
